@@ -5,10 +5,7 @@
  */
 public class ProblemFive {
 
-    public static void main(String[] args) {
-        ProblemFive prob = new ProblemFive();
-        prob.division();
-    }
+    public void call(){division();}
 
 
     /* Field variables */

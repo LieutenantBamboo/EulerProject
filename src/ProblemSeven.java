@@ -5,13 +5,14 @@
  */
 public class ProblemSeven {
 
+    public void call(){prime();}
 
     /* Field vatiables */
     int current = 3;
     int count = 1;
     boolean isPrimeNumber;
 
-    /**  */
+    /** main call method */
 
     public void prime()
     {

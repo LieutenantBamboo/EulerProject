@@ -8,22 +8,22 @@ public class ErastosthenesSieve {
     private int bound;
     private boolean[] primes;
 
-    public ErastosthenesSieve(int bound)
-    {
+    public ErastosthenesSieve(int bound) {
         this.bound = bound;
         primes = new boolean[bound];
         Arrays.fill(primes, Boolean.TRUE);
-        primes[0] = false; primes[1] = false;
+        primes[0] = false;                  // 1 is not a prime number
+        primes[1] = false;                  // Likewise with 2
         sieve();
     }
 
-    /** Erastothenes sieve algorithm */
+    /**
+     * Erastothenes sieve algorithm
+     */
 
-    public void sieve()
-    {
-        for(int x = 2; x < (Math.sqrt(bound)); x++)
-        {
-            if(primes[x] = true) {
+    public void sieve() {
+        for (int x = 2; x < Math.ceil(Math.sqrt(bound)); x++) {
+            if (primes[x]) {
                 for (int num = (int) Math.pow(x, 2); num < bound; num += x) {
                     primes[num] = false;
                 }
@@ -31,25 +31,40 @@ public class ErastosthenesSieve {
         }
     }
 
-    /** Adds all primes into an array list using the boolean array
+    /**
+     * Adds all primes into an array list using the true boolean array values
+     * Complexity: O(n)
      * @return the array list of primes
      */
 
-    public ArrayList<Integer> primes()
-    {
+    public ArrayList<Integer> primes() {
         ArrayList<Integer> foobar = new ArrayList<Integer>();
-        for(int z = 0; z < bound; z++){
-            if(primes[z]){
+        for (int z = 0; z < bound; z++) {
+            if (primes[z]) {
                 foobar.add(z);
             }
         }
-       return foobar;
+        return foobar;
     }
 
     /* Result related methods */
 
     public void print() // Prints all true (prime) values in the prime array
-    {for(int z = 0; z < bound; z++){if(primes[z]){System.out.println(z);}}}
-    public ArrayList<Integer> getPrimes(){return primes();}
-    public boolean[] getPrimeBooleans(){return primes;}
+    {
+        for (int z = 0; z < bound; z++) {
+            if (primes[z]) {
+                System.out.println(z);
+            }
+        }
+    }
+
+    // Getters
+
+    public ArrayList<Integer> getPrimes() {
+        return primes();
+    }
+
+    public boolean[] getPrimeBooleans() {
+        return primes;
+    }
 }

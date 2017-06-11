@@ -4,10 +4,12 @@
 
 public class ProblemThree {
 
-    public Long factor(Long num) {
-        // TODO code application logic here
-        //long num = 600851475143L;
+    public void call(){
+        System.out.println(factor());
+    }
 
+    public Long factor() {
+        long num = 600851475143L;
         long original = num;
         long max = (num);
         long highPrime = 1L;
@@ -16,7 +18,6 @@ public class ProblemThree {
 
         // loop through the numbers, adding 2
         for (long i = 3L; i < max; i += 2) {
-
             boolean isPrimeNumber = true;
 
             // check to see if the number is prime
@@ -24,28 +25,20 @@ public class ProblemThree {
                 if (i % j == 0) {
                     isPrimeNumber = false;
                     break; // exit the inner for loop
-                } else {
                 }
-
-
             }
-            if (isPrimeNumber = true && i != 1) {
-                while ((num % i) == 0) {
 
+            //
+            if (isPrimeNumber && i != 1) {
+                while ((num % i) == 0) {
                     num = (num / i);
                     highPrime = i;
                     multiple *= i;
-
                     //Sets new max prime factor
-
                 }
-            } else {
             }
 
-            if (multiple == original) {
-                break;
-            }
-
+            if (multiple == original) { break; }
 
         }
         System.out.println("The highest prime factor is: " + highPrime);

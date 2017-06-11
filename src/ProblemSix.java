@@ -5,6 +5,10 @@ public class ProblemSix {
     int answer;
     int limit = 101;
 
+    public void call(){
+        System.out.println(difference());
+    }
+
     /**
      * @return the difference betwee (x^2 + y^2) and (x + y)^2 = 2xy
      */

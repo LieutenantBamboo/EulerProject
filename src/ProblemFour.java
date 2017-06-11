@@ -15,6 +15,8 @@ public class ProblemFour {
         prob.palindrome();
     }
 
+    public void call(){palindrome();}
+
     /**
      * Main class call method
      * */
